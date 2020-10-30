@@ -1,4 +1,4 @@
-#!/bin/bash -x
+#!/bin/bash 
 
 #TO DECLEAR THE DICTIONARY
 declare -A arithmeticOperation
@@ -35,8 +35,14 @@ for ((index=0; index<=${#arithmeticOperation[@]}; index++))
 do
   array[((index))]=${arithmeticOperation[((result$((index+1))))]}
 done
-echo "${array[@]}"
+echo "computed results are                 :" ${array[@]}
 
 #TO STORE AND PRINT RESULTS IN DECENDING ORDER
 resultsDescendingOrder=( $( printf "%s\n" "${array[@]}" | sort -nr ) )
-echo ${resultsDescendingOrder[@]}
+echo "computed result in Descending order  :"  ${resultsDescendingOrder[@]}
+
+
+#TO STORE AND PRINT RESULTS IN ASCENDING ORDER
+resultsAscendingOrder=( $( printf "%s\n" "${array[@]}" | sort -n ) )
+echo "computed result in Ascending order   :"  ${resultsAscendingOrder[@]}
+
