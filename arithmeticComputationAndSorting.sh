@@ -3,6 +3,9 @@
 #TO DECLEAR THE DICTIONARY
 declare -A arithmeticOperation
 
+#TO DECLEAR THE ARRAY
+declare -a array
+
 echo "                   Arithmetic Compution And Sorting"
 echo "--------------------------------------------------------------------"
 
@@ -26,3 +29,10 @@ arithmeticOperation[((result1))]=$result1
 arithmeticOperation[((result2))]=$result2
 arithmeticOperation[((result3))]=$result3
 arithmeticOperation[((result4))]=$result4
+
+#TO READ RESULTS FROM DICTIONARY AND STORE THEM IN ARRAY
+for ((index=0; index<=${#arithmeticOperation[@]}; index++))
+do
+  array[((index))]=${arithmeticOperation[((result$((index+1))))]}
+done
+echo "${array[@]}"
