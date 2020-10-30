@@ -12,4 +12,7 @@ result2=`echo $firstInput $secondInput $thirdInput |awk '{printf($1 * $2 + $3)}'
 echo "Result2: firstInput * secondInput + thirdInput = " $result2
 result3=`echo $firstInput $secondInput $thirdInput |awk '{printf($1 / $2 + $3)}'`
 echo "Result3: firstInput / secondInput + thirdInput = " $result3
+result4=`echo $firstInput $secondInput $thirdInput |awk '{printf($1 % $2 + $3)}'`
+echo "Result4: firstInput % secondInput + thirdInput = " $result4
+
 
