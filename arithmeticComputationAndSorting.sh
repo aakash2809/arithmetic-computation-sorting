@@ -14,7 +14,7 @@ read -p "Enter first input :" firstInput
 read -p "Enter second input:" secondInput
 read -p "Enter third input :" thirdInput
 
-#COMPUTE ARITHMETIC OPERATION
+#TOCOMPUTE ARITHMETIC OPERATION
 result1=`echo $firstInput $secondInput $thirdInput |awk '{printf($1 + $2 * $3)}'`
 echo "Result1: firstInput + secondInput * thirdInput = " $result1
 result2=`echo $firstInput $secondInput $thirdInput |awk '{printf($1 * $2 + $3)}'`
@@ -36,3 +36,7 @@ do
   array[((index))]=${arithmeticOperation[((result$((index+1))))]}
 done
 echo "${array[@]}"
+
+#TO STORE AND PRINT RESULTS IN DECENDING ORDER
+resultsDescendingOrder=( $( printf "%s\n" "${array[@]}" | sort -nr ) )
+echo ${resultsDescendingOrder[@]}
